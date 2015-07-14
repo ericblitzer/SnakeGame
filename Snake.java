@@ -105,10 +105,10 @@ public class Snake{
         
     }
     
-    public int moveSnake(String direction){
+    public int moveSnake(int direction){
       int result=0;
       
-      if(direction=="right"){
+      if(direction==4){
         drawSquare(foodXCoord, foodYCoord);
         if((nodeListFront.getXCoord()+2)<=99){ 
           
@@ -122,7 +122,11 @@ public class Snake{
           xCoordinate = nodeListFront.getXCoord();
           yCoordinate = nodeListFront.getYCoord();
           
+         // System.out.println("XCoord: "+xCoordinate);
+         // System.out.println("YCoord: "+yCoordinate);
+          
           if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
+            //System.out.println("too far");
             result = 1;    
           }
           
@@ -130,7 +134,7 @@ public class Snake{
             newFood();
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
           }
-        }
+        } else result=1;
         
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
@@ -144,7 +148,7 @@ public class Snake{
         
       }
       
-      else if(direction=="up"){
+      else if(direction==1){
         drawSquare(foodXCoord, foodYCoord);
         if((nodeListFront.getYCoord()+2)<=99){ 
           
@@ -167,6 +171,7 @@ public class Snake{
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
           }
         }
+        else result=1;
         
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
@@ -179,7 +184,7 @@ public class Snake{
         
       }
       
-      else if(direction=="left"){
+      else if(direction==2){
         drawSquare(foodXCoord, foodYCoord);
         if((nodeListFront.getXCoord()-2)>=1){ 
           
@@ -193,6 +198,9 @@ public class Snake{
           xCoordinate = nodeListFront.getXCoord();
           yCoordinate = nodeListFront.getYCoord();
           
+         //  System.out.println("XCoord: "+xCoordinate);
+         // System.out.println("YCoord: "+yCoordinate);
+          
           if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
             result = 1;      
           }
@@ -202,6 +210,7 @@ public class Snake{
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
           }
         }
+        else result=1;
         
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
@@ -214,9 +223,9 @@ public class Snake{
         
       }
       
-      else if(direction=="down"){
+      else if(direction==3){
         drawSquare(foodXCoord, foodYCoord);
-        if((nodeListFront.getXCoord()-2)>=1){ 
+        if((nodeListFront.getYCoord()-2)>=1){ 
           
           
           Node temp = new Node();
@@ -238,6 +247,7 @@ public class Snake{
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
           }
         }
+        else result=1;
         
         Node placeHolder = new Node();
         placeHolder = nodeListFront;

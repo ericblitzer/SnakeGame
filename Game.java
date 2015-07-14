@@ -16,6 +16,8 @@ public class Game{
         StdDraw.line(100, 100, 0, 100);
         StdDraw.line(0, 100, 0, 0);
     }
+    
+    
 
     public static void main(String [] args){
         Snake snake = new Snake();
@@ -26,65 +28,83 @@ public class Game{
         StdDraw.setYscale(-5,110);
         drawBoard(0);
         snake.drawFirstSquares();
-        int directionFlag = 0;  
+        int directionFlag = 0; 
+        int directionPlaceHolder=0;
         int lost=0;
         int length=0;
+        int count=0;
+        
+        boolean gameOn=true;
 
-        while(true){
+        while(gameOn==true){
           
           if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
-          if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
+          if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT ) && directionFlag!=0) { directionFlag=2;}
           if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
           if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
+          directionPlaceHolder = directionFlag;
+          //while(directionFlag == directionPlaceHolder){
+          if(directionFlag!=0){   StdDraw.clear();}
+          drawBoard(snake.getLength()-50);
+          lost = snake.moveSnake(directionFlag);
+             // System.out.println("lost value: "+lost);
+          StdDraw.show(80);
+          if(lost==1){
+             System.out.println("lost value: "+lost);
+             gameOn=false;
+             return;
+          }
+          count++;
+         // }
           
-          if(directionFlag==1){
+          /*if(directionFlag==1){
             while(directionFlag==1){
               StdDraw.clear();
               drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("up");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
-              else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
+              if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
               //else if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
               StdDraw.show(100);
-              if(lost==1) return;
+              if(lost==1){System.out.println("111"); gameOn=false; return;}
             }
           }
-          else if(directionFlag==2){
+          if(directionFlag==2){
             while(directionFlag==2){
               StdDraw.clear();
               drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("left");
              // if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
-              else if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
+              if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
               StdDraw.show(100);
-              if(lost==1) return;
+              if(lost==1){System.out.println("111"); gameOn=false; return;}
             }
           }
-          else if(directionFlag==3){
+          if(directionFlag==3){
             while(directionFlag==3){
               StdDraw.clear();
               drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("down");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
-              else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
+              if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
               StdDraw.show(100);
-              if(lost==1) return;
+              if(lost==1){System.out.println("111"); gameOn=false; return;}
             }
           }
-          else if(directionFlag==4){
+          if(directionFlag==4){
             while(directionFlag==4){
               StdDraw.clear();
               drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("right");
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
-              else if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
+              if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
               StdDraw.show(100);
-              if(lost==1) return;
+              if(lost==1){System.out.println("111"); gameOn=false; return;}
             }
-          }
+          }*/
         
         // StdDraw.show(100); 
         }
