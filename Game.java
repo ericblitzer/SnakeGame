@@ -5,16 +5,30 @@ import java.awt.event.KeyEvent;
 
 public class Game{
 
-  
+    public static void drawBoard(int score){
+        StdDraw.setPenColor(StdDraw.BLUE);
+        StdDraw.text(30,105,"Snake");
+        StdDraw.setPenColor(StdDraw.GREEN);
+        StdDraw.text(68,105,"Score: "+score);
+        StdDraw.setPenColor(StdDraw.BLACK);
+        StdDraw.line(0, 0, 100, 0);
+        StdDraw.line(100, 0, 100, 100);
+        StdDraw.line(100, 100, 0, 100);
+        StdDraw.line(0, 100, 0, 0);
+    }
 
     public static void main(String [] args){
         Snake snake = new Snake();
       
-        StdDraw.setXscale(0,100);
-        StdDraw.setYscale(0,100);
+        
+        
+        StdDraw.setXscale(-5,105);
+        StdDraw.setYscale(-5,110);
+        drawBoard(0);
         snake.drawFirstSquares();
         int directionFlag = 0;  
         int lost=0;
+        int length=0;
 
         while(true){
           
@@ -26,6 +40,7 @@ public class Game{
           if(directionFlag==1){
             while(directionFlag==1){
               StdDraw.clear();
+              drawBoard(snake.getLength()-5);
               lost = snake.moveSnake("up");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
@@ -37,6 +52,7 @@ public class Game{
           else if(directionFlag==2){
             while(directionFlag==2){
               StdDraw.clear();
+              drawBoard(snake.getLength()-5);
               lost = snake.moveSnake("left");
              // if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
@@ -48,6 +64,7 @@ public class Game{
           else if(directionFlag==3){
             while(directionFlag==3){
               StdDraw.clear();
+              drawBoard(snake.getLength()-5);
               lost = snake.moveSnake("down");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
@@ -59,6 +76,7 @@ public class Game{
           else if(directionFlag==4){
             while(directionFlag==4){
               StdDraw.clear();
+              drawBoard(snake.getLength()-5);
               lost = snake.moveSnake("right");
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;

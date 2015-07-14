@@ -19,6 +19,10 @@ public class Snake{
         newFood();     
     }
     
+    public int getLength(){
+        return length;  
+    }
+    
     public void newFood(){
         Random randNumGen = new Random();
         foodXCoord = Math.ceil(Math.random()*100);
@@ -79,7 +83,7 @@ public class Snake{
         addSquare(47, 49);
         StdDraw.filledSquare(45, 49,radius);
         addSquare(45, 49);
-        
+
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
 
