@@ -128,6 +128,7 @@ public class Snake{
     public void moveSnake(String direction){
       
       if(direction=="right"){
+        drawSquare(foodXCoord, foodYCoord);
 
         Node temp = new Node();
         temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
@@ -147,6 +148,7 @@ public class Snake{
       }
       
       else if(direction=="up"){
+        drawSquare(foodXCoord, foodYCoord);
 
         Node temp = new Node();
         temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
@@ -166,6 +168,7 @@ public class Snake{
       }
       
       else if(direction=="left"){
+        drawSquare(foodXCoord, foodYCoord);
 
         Node temp = new Node();
         temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
@@ -185,6 +188,7 @@ public class Snake{
       }
       
       else if(direction=="down"){
+        drawSquare(foodXCoord, foodYCoord);
 
         Node temp = new Node();
         temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());

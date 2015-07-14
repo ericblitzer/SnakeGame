@@ -48,7 +48,6 @@ public class Game{
                   foodYCoord = (2*randNumGen.nextDouble()*50)-1;
                  // done = snake.drawSquare(foodXCoord, foodYCoord);
               }*/
-              done = snake.drawSquare(snake.getFoodXCoord(), snake.getFoodYCoord());
               snake.moveSnake("up");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
@@ -64,7 +63,6 @@ public class Game{
                   foodYCoord = (2*randNumGen.nextDouble()*50)-1;
                   //done = snake.drawSquare(foodXCoord, foodYCoord);
               }*/
-              done = snake.drawSquare(snake.getFoodXCoord(), snake.getFoodYCoord());
               snake.moveSnake("left");
              // if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
@@ -80,7 +78,6 @@ public class Game{
                    foodYCoord = (2*randNumGen.nextDouble()*50)-1;
                 //  done = snake.drawSquare(foodXCoord, foodYCoord);
               }*/
-              done = snake.drawSquare(snake.getFoodXCoord(), snake.getFoodYCoord());
               snake.moveSnake("down");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
@@ -97,7 +94,6 @@ public class Game{
                  // done = snake.drawSquare(foodXCoord, foodYCoord);
              // }
               
-              done = snake.drawSquare(snake.getFoodXCoord(), snake.getFoodYCoord());
               snake.moveSnake("right");
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
