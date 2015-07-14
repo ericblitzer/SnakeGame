@@ -34,28 +34,42 @@ public class Game{
         int length=0;
         int count=0;
         
+        boolean paused = false;
+        
         boolean gameOn=true;
 
         while(gameOn==true){
           
-          if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
-          if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT ) && directionFlag!=0) { directionFlag=2;}
-          if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
-          if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
+          if(StdDraw.isKeyPressed(KeyEvent.VK_UP ) && paused==false && directionFlag != 3) { paused=false; directionFlag=1;}
+          if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT ) && directionFlag!=0 && paused==false && directionFlag != 4) { paused=false; directionFlag=2;}
+          if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN ) && paused==false && directionFlag != 1) { paused=false; directionFlag=3;}
+          if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT ) && paused==false && directionFlag != 2) { paused=false; directionFlag=4;}
+         /* if(StdDraw.isKeyPressed(KeyEvent.VK_P)) { 
+            System.out.println("pausestuff");
+            //if(paused==false){ 
+              System.out.println("HERE");
+                paused=true;
+               // break;
+            //} else{
+             // System.out.println("HERETWOOOOOOO");
+               // paused=false;  
+            }*/
+          
+          //System.out.println("p value: "+paused);
           directionPlaceHolder = directionFlag;
-          //while(directionFlag == directionPlaceHolder){
+          if(paused==false){
           if(directionFlag!=0){   StdDraw.clear();}
           drawBoard(snake.getLength()-50);
           lost = snake.moveSnake(directionFlag);
              // System.out.println("lost value: "+lost);
-          StdDraw.show(80);
+          StdDraw.show(60);
           if(lost==1){
              System.out.println("lost value: "+lost);
              gameOn=false;
              return;
           }
           count++;
-         // }
+          }
           
           /*if(directionFlag==1){
             while(directionFlag==1){
@@ -108,5 +122,6 @@ public class Game{
         
         // StdDraw.show(100); 
         }
+        System.out.println("end");
     } 
 }

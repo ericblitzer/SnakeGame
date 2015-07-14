@@ -24,6 +24,10 @@ public class Snake{
     }
     
     public void newFood(){
+     // System.out.println("here");
+        boolean ok=false;
+        while(ok==false){
+         // System.out.println("here");
         Random randNumGen = new Random();
         foodXCoord = Math.ceil(Math.random()*100);
         foodYCoord = Math.ceil(Math.random()*100);
@@ -35,7 +39,19 @@ public class Snake{
         if(foodYCoord%2 == 0){
             if(foodYCoord == 1) foodYCoord++;
             else foodYCoord--;
-        }        
+        }    
+        //ok=true;
+       // System.out.println("here");
+        Node temp = new Node();
+        temp = nodeListFront;
+        ok=true;
+        while(temp.getNext() != null){
+          if(foodXCoord==temp.getXCoord() && foodYCoord==temp.getYCoord()){
+              ok=false; 
+          }
+          temp = temp.getNext();
+        }
+        }
     }
     
     public double getFoodXCoord(){
