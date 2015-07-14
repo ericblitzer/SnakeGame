@@ -139,6 +139,7 @@ public class Snake{
         for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
+            if(xCoordinate==placeHolder.getXCoord() && yCoordinate==placeHolder.getYCoord()) result=1;
         }
         
       }
@@ -173,6 +174,7 @@ public class Snake{
         for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
+            if(xCoordinate==placeHolder.getXCoord() && yCoordinate==placeHolder.getYCoord()) result=1;
         }
         
       }
@@ -207,6 +209,7 @@ public class Snake{
         for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
+            if(xCoordinate==placeHolder.getXCoord() && yCoordinate==placeHolder.getYCoord()) result=1;
         }
         
       }
@@ -224,6 +227,7 @@ public class Snake{
           
           xCoordinate = nodeListFront.getXCoord();
           yCoordinate = nodeListFront.getYCoord();
+         
           
           if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
             result = 1;      
@@ -241,6 +245,7 @@ public class Snake{
         for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
+            if(xCoordinate==placeHolder.getXCoord() && yCoordinate==placeHolder.getYCoord()) result=1;
         }
         
       }
