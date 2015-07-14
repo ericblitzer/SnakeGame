@@ -7,9 +7,9 @@ public class Game{
 
     public static void drawBoard(int score){
         StdDraw.setPenColor(StdDraw.BLUE);
-        StdDraw.text(30,105,"Snake");
+        StdDraw.text(5,108,"Snake");
         StdDraw.setPenColor(StdDraw.GREEN);
-        StdDraw.text(68,105,"Score: "+score);
+        StdDraw.text(93,108,"Score: "+score);
         StdDraw.setPenColor(StdDraw.BLACK);
         StdDraw.line(0, 0, 100, 0);
         StdDraw.line(100, 0, 100, 100);
@@ -65,6 +65,9 @@ public class Game{
           StdDraw.show(60);
           if(lost==1){
              System.out.println("lost value: "+lost);
+             StdDraw.setPenColor(StdDraw.BLACK);
+             StdDraw.text(50,50,"Game Over. You Lose!"); 
+             StdDraw.show();
              gameOn=false;
              return;
           }
