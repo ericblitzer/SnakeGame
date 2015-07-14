@@ -13,7 +13,8 @@ public class Game{
         StdDraw.setXscale(0,100);
         StdDraw.setYscale(0,100);
         snake.drawFirstSquares();
-        int directionFlag = 0;      
+        int directionFlag = 0;  
+        int lost=0;
 
         while(true){
           
@@ -25,45 +26,49 @@ public class Game{
           if(directionFlag==1){
             while(directionFlag==1){
               StdDraw.clear();
-              snake.moveSnake("up");
+              lost = snake.moveSnake("up");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
               //else if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
-              StdDraw.show(80);
+              StdDraw.show(100);
+              if(lost==1) return;
             }
           }
           else if(directionFlag==2){
             while(directionFlag==2){
               StdDraw.clear();
-              snake.moveSnake("left");
+              lost = snake.moveSnake("left");
              // if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
               else if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
-              StdDraw.show(80);
+              StdDraw.show(100);
+              if(lost==1) return;
             }
           }
           else if(directionFlag==3){
             while(directionFlag==3){
               StdDraw.clear();
-              snake.moveSnake("down");
+              lost = snake.moveSnake("down");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
               else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
-              StdDraw.show(80);
+              StdDraw.show(100);
+              if(lost==1) return;
             }
           }
           else if(directionFlag==4){
             while(directionFlag==4){
               StdDraw.clear();
-              snake.moveSnake("right");
+              lost = snake.moveSnake("right");
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
               else if(StdDraw.isKeyPressed(KeyEvent.VK_DOWN )) directionFlag=3;
-              StdDraw.show(80);
+              StdDraw.show(100);
+              if(lost==1) return;
             }
           }
         
-          
+        // StdDraw.show(100); 
         }
     } 
 }
