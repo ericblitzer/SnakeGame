@@ -109,28 +109,32 @@ public class Snake{
       int result=0;
       
       if(direction=="right"){
-        drawSquare(foodXCoord, foodYCoord);
-
-        Node temp = new Node();
-        temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
-        temp.setNext(nodeListFront.getNext());
-        nodeListFront.setCoords(nodeListFront.getXCoord()+2, nodeListFront.getYCoord());
-        nodeListFront.setNext(temp);
         
-        xCoordinate = nodeListFront.getXCoord();
-        yCoordinate = nodeListFront.getYCoord();
-        
-        if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
+        if((nodeListFront.getXCoord()+2)<=99){ 
+          drawSquare(foodXCoord, foodYCoord);
+          
+          Node temp = new Node();
+          temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
+          temp.setNext(nodeListFront.getNext());
+          nodeListFront.setCoords(nodeListFront.getXCoord()+2, nodeListFront.getYCoord());
+          nodeListFront.setNext(temp);
+          
+          xCoordinate = nodeListFront.getXCoord();
+          yCoordinate = nodeListFront.getYCoord();
+          
+          if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
             result = 1;    
-        }
-        
-        if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
+          }
+          
+          if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
             newFood();
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
+          }
         }
         
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
+       
         
         for(int i=0; i<length; i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
@@ -140,24 +144,26 @@ public class Snake{
       }
       
       else if(direction=="up"){
-        drawSquare(foodXCoord, foodYCoord);
-
-        Node temp = new Node();
-        temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
-        temp.setNext(nodeListFront.getNext());
-        nodeListFront.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord()+2);
-        nodeListFront.setNext(temp);
-        
-        xCoordinate = nodeListFront.getXCoord();
-        yCoordinate = nodeListFront.getYCoord();
-        
-        if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
+        if((nodeListFront.getYCoord()+2)<=99){ 
+          drawSquare(foodXCoord, foodYCoord);
+          
+          Node temp = new Node();
+          temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
+          temp.setNext(nodeListFront.getNext());
+          nodeListFront.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord()+2);
+          nodeListFront.setNext(temp);
+          
+          xCoordinate = nodeListFront.getXCoord();
+          yCoordinate = nodeListFront.getYCoord();
+          
+          if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
             result = 1;       
-        }
-        
-        if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
+          }
+          
+          if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
             newFood();
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
+          }
         }
         
         Node placeHolder = new Node();
@@ -171,24 +177,26 @@ public class Snake{
       }
       
       else if(direction=="left"){
-        drawSquare(foodXCoord, foodYCoord);
-
-        Node temp = new Node();
-        temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
-        temp.setNext(nodeListFront.getNext());
-        nodeListFront.setCoords(nodeListFront.getXCoord()-2, nodeListFront.getYCoord());
-        nodeListFront.setNext(temp);
-        
-        xCoordinate = nodeListFront.getXCoord();
-        yCoordinate = nodeListFront.getYCoord();
-        
-        if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
+        if((nodeListFront.getXCoord()-2)>=1){ 
+          drawSquare(foodXCoord, foodYCoord);
+          
+          Node temp = new Node();
+          temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
+          temp.setNext(nodeListFront.getNext());
+          nodeListFront.setCoords(nodeListFront.getXCoord()-2, nodeListFront.getYCoord());
+          nodeListFront.setNext(temp);
+          
+          xCoordinate = nodeListFront.getXCoord();
+          yCoordinate = nodeListFront.getYCoord();
+          
+          if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
             result = 1;      
-        }
-        
-        if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
+          }
+          
+          if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
             newFood();
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
+          }
         }
         
         Node placeHolder = new Node();
@@ -202,24 +210,26 @@ public class Snake{
       }
       
       else if(direction=="down"){
-        drawSquare(foodXCoord, foodYCoord);
-
-        Node temp = new Node();
-        temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
-        temp.setNext(nodeListFront.getNext());
-        nodeListFront.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord()-2);
-        nodeListFront.setNext(temp);
-        
-        xCoordinate = nodeListFront.getXCoord();
-        yCoordinate = nodeListFront.getYCoord();
-        
-        if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
+        if((nodeListFront.getXCoord()-2)>=1){ 
+          drawSquare(foodXCoord, foodYCoord);
+          
+          Node temp = new Node();
+          temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
+          temp.setNext(nodeListFront.getNext());
+          nodeListFront.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord()-2);
+          nodeListFront.setNext(temp);
+          
+          xCoordinate = nodeListFront.getXCoord();
+          yCoordinate = nodeListFront.getYCoord();
+          
+          if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
             result = 1;      
-        }
-        
-        if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
+          }
+          
+          if(xCoordinate==foodXCoord && yCoordinate==foodYCoord){
             newFood();
             addSquare(nodeListBack.getXCoord(), nodeListBack.getYCoord());
+          }
         }
         
         Node placeHolder = new Node();
