@@ -40,7 +40,7 @@ public class Game{
           if(directionFlag==1){
             while(directionFlag==1){
               StdDraw.clear();
-              drawBoard(snake.getLength()-5);
+              drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("up");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;
@@ -52,7 +52,7 @@ public class Game{
           else if(directionFlag==2){
             while(directionFlag==2){
               StdDraw.clear();
-              drawBoard(snake.getLength()-5);
+              drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("left");
              // if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
@@ -64,7 +64,7 @@ public class Game{
           else if(directionFlag==3){
             while(directionFlag==3){
               StdDraw.clear();
-              drawBoard(snake.getLength()-5);
+              drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("down");
               if(StdDraw.isKeyPressed(KeyEvent.VK_RIGHT )) directionFlag=4;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
@@ -76,7 +76,7 @@ public class Game{
           else if(directionFlag==4){
             while(directionFlag==4){
               StdDraw.clear();
-              drawBoard(snake.getLength()-5);
+              drawBoard(snake.getLength()-50);
               lost = snake.moveSnake("right");
               if(StdDraw.isKeyPressed(KeyEvent.VK_UP )) directionFlag=1;
              // else if(StdDraw.isKeyPressed(KeyEvent.VK_LEFT )) directionFlag=2;

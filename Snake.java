@@ -51,7 +51,7 @@ public class Snake{
         if(length==0){
             nodeListFront.setCoords(xCoord, yCoord);
             nodeListFront.setNext(nodeListBack);
-        }else if(length==1){
+        }else if(length==10){
             nodeListBack.setCoords(xCoord, yCoord);
             
         }else{
@@ -60,7 +60,7 @@ public class Snake{
             nodeListBack.setNext(temp);
             nodeListBack = temp;
         }
-        length++;
+        length+=10;
         
         xCoordinate = nodeListFront.getXCoord();
         yCoordinate = nodeListFront.getYCoord();
@@ -109,9 +109,9 @@ public class Snake{
       int result=0;
       
       if(direction=="right"){
-        
+        drawSquare(foodXCoord, foodYCoord);
         if((nodeListFront.getXCoord()+2)<=99){ 
-          drawSquare(foodXCoord, foodYCoord);
+          
           
           Node temp = new Node();
           temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
@@ -136,7 +136,7 @@ public class Snake{
         placeHolder = nodeListFront;
        
         
-        for(int i=0; i<length; i++){
+        for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
         }
@@ -144,8 +144,9 @@ public class Snake{
       }
       
       else if(direction=="up"){
+        drawSquare(foodXCoord, foodYCoord);
         if((nodeListFront.getYCoord()+2)<=99){ 
-          drawSquare(foodXCoord, foodYCoord);
+          
           
           Node temp = new Node();
           temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
@@ -169,7 +170,7 @@ public class Snake{
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
         
-        for(int i=0; i<length; i++){
+        for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
         }
@@ -177,8 +178,9 @@ public class Snake{
       }
       
       else if(direction=="left"){
+        drawSquare(foodXCoord, foodYCoord);
         if((nodeListFront.getXCoord()-2)>=1){ 
-          drawSquare(foodXCoord, foodYCoord);
+          
           
           Node temp = new Node();
           temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
@@ -202,7 +204,7 @@ public class Snake{
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
         
-        for(int i=0; i<length; i++){
+        for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
         }
@@ -210,8 +212,9 @@ public class Snake{
       }
       
       else if(direction=="down"){
+        drawSquare(foodXCoord, foodYCoord);
         if((nodeListFront.getXCoord()-2)>=1){ 
-          drawSquare(foodXCoord, foodYCoord);
+          
           
           Node temp = new Node();
           temp.setCoords(nodeListFront.getXCoord(), nodeListFront.getYCoord());
@@ -235,7 +238,7 @@ public class Snake{
         Node placeHolder = new Node();
         placeHolder = nodeListFront;
         
-        for(int i=0; i<length; i++){
+        for(int i=0; i<(length/10); i++){
             StdDraw.filledSquare(placeHolder.getXCoord(), placeHolder.getYCoord(), radius);
             placeHolder = placeHolder.getNext();
         }
