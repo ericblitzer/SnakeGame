@@ -62,7 +62,7 @@ public class Game{
           drawBoard(snake.getLength()-50);
           lost = snake.moveSnake(directionFlag);
              // System.out.println("lost value: "+lost);
-          StdDraw.show(60);
+          StdDraw.show(90);
           if(lost==1){
              System.out.println("lost value: "+lost);
              StdDraw.setPenColor(StdDraw.BLACK);
