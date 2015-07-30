@@ -24,10 +24,8 @@ public class Snake{
     }
     
     public void newFood(){
-     // System.out.println("here");
         boolean ok=false;
         while(ok==false){
-         // System.out.println("here");
         Random randNumGen = new Random();
         foodXCoord = Math.ceil(Math.random()*100);
         foodYCoord = Math.ceil(Math.random()*100);
@@ -40,8 +38,6 @@ public class Snake{
             if(foodYCoord == 1) foodYCoord++;
             else foodYCoord--;
         }    
-        //ok=true;
-       // System.out.println("here");
         Node temp = new Node();
         temp = nodeListFront;
         ok=true;
@@ -138,11 +134,8 @@ public class Snake{
           xCoordinate = nodeListFront.getXCoord();
           yCoordinate = nodeListFront.getYCoord();
           
-         // System.out.println("XCoord: "+xCoordinate);
-         // System.out.println("YCoord: "+yCoordinate);
           
           if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
-            //System.out.println("too far");
             result = 1;    
           }
           
@@ -214,8 +207,6 @@ public class Snake{
           xCoordinate = nodeListFront.getXCoord();
           yCoordinate = nodeListFront.getYCoord();
           
-         //  System.out.println("XCoord: "+xCoordinate);
-         // System.out.println("YCoord: "+yCoordinate);
           
           if(xCoordinate>99 || xCoordinate<1 || yCoordinate>99 || yCoordinate<1){
             result = 1;      
