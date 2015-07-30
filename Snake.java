@@ -1,8 +1,5 @@
 import java.util.Random;
-import java.awt.Font;
-import java.util.concurrent.TimeUnit;
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
+
 
 public class Snake{
   
